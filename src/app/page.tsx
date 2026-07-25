@@ -1,65 +1,106 @@
-import Image from "next/image";
+import Background3D from "@/components/canvas/Background3D";
+import HeroText from "@/components/animations/HeroText";
+import HorizontalScroll from "@/components/animations/HorizontalScroll";
+import Marquee from "@/components/animations/Marquee";
+import { TextReveal } from "@/components/animations/TextReveal";
+import ParallaxGallery from "@/components/animations/ParallaxGallery";
+import VideoMask from "@/components/animations/VideoMask";
+import SlidingPanels from "@/components/animations/SlidingPanels";
+import ZigZag from "@/components/animations/ZigZag";
+import ExpandingCards from "@/components/animations/ExpandingCards";
+import StickySection from "@/components/animations/StickySection";
+import InfiniteCarousel from "@/components/animations/InfiniteCarousel";
 
 export default function Home() {
+  const revealText = "Every pixel is carefully crafted to deliver a highly engaging and extremely premium experience. We use the latest in WebGL and Framer Motion to build an unforgettable digital journey. Scroll down to see the magic unfold.";
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="relative w-full overflow-x-hidden bg-transparent text-white">
+      {/* Fixed 3D Background */}
+      <div className="fixed inset-0 -z-10 w-full h-screen pointer-events-none">
+        <Background3D />
+      </div>
+      
+      {/* 1. Hero Section */}
+      <section className="relative w-full h-screen flex flex-col items-center justify-center pt-20 px-4 md:px-10 z-10 pointer-events-none">
+        <div className="max-w-7xl w-full text-center pointer-events-auto">
+          <HeroText text="The Future of Web Experiences" />
+          <p className="mt-12 text-neutral-400 text-xl md:text-3xl font-light tracking-wide max-w-4xl mx-auto opacity-80">
+            Immersive 3D environments combined with buttery smooth animations. A new dimension of interaction.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* 2. Text Reveal Section */}
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-center py-32 px-4 z-10 pointer-events-none bg-gradient-to-b from-transparent to-black">
+        <div className="max-w-5xl w-full pointer-events-auto">
+          <TextReveal text={revealText} className="text-center md:text-left" />
         </div>
-      </main>
-    </div>
+      </section>
+      
+      {/* 3. Sliding Panels (Unexpected Left/Right) */}
+      <SlidingPanels />
+
+      {/* 4. Video Mask Scale Section */}
+      <section className="relative z-10">
+        <VideoMask />
+      </section>
+      
+      {/* 5. ZigZag Feature Section */}
+      <section className="relative z-10 pointer-events-auto">
+        <ZigZag />
+      </section>
+
+      {/* 6. Giant Marquee Section */}
+      <section className="relative w-full py-20 z-10 pointer-events-auto bg-black overflow-hidden flex flex-col justify-center">
+        <Marquee text="Premium Design • WebGL Magic • " />
+        <div className="mt-20">
+          <Marquee text="Next.js Performance • Smooth Scroll • " />
+        </div>
+      </section>
+
+      {/* 7. Parallax Gallery Section */}
+      <section className="relative z-10 pointer-events-auto">
+        <ParallaxGallery />
+      </section>
+
+      {/* 8. Horizontal Scroll Section */}
+      <HorizontalScroll />
+
+      {/* 9. Sticky Scroll Reveal (NEW) */}
+      <StickySection />
+
+      {/* 10. Expanding Cards (NEW) */}
+      <ExpandingCards />
+
+      {/* 11. Infinite Loop Carousel (NEW) */}
+      <InfiniteCarousel />
+
+      {/* 12. Contact / CTA Section */}
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-center py-40 px-4 z-10 pointer-events-auto bg-black">
+        <div className="max-w-5xl w-full text-center space-y-16">
+          <h2 className="text-6xl md:text-[8vw] font-black tracking-tighter text-white uppercase leading-none">
+            Ready to build?
+          </h2>
+          <p className="text-2xl md:text-4xl text-neutral-400 font-light">
+            Let's create something extraordinary together.
+          </p>
+          <button className="mt-12 px-12 py-6 bg-white text-black text-2xl font-bold rounded-full hover:scale-105 transition-transform duration-300 uppercase tracking-widest cursor-none">
+            Start a project
+          </button>
+        </div>
+      </section>
+      
+      {/* Footer Section */}
+      <footer className="relative w-full pt-40 pb-20 flex flex-col items-center justify-center z-10 pointer-events-auto bg-black border-t border-neutral-900">
+        <h1 className="text-[15vw] font-black tracking-tighter text-neutral-900 uppercase pointer-events-none select-none leading-[0.8]">
+          Motion
+        </h1>
+        <div className="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center mt-20 px-10 text-neutral-500 font-medium tracking-widest uppercase text-sm">
+          <p>© 2026 Antigravity. All rights reserved.</p>
+          <p className="mt-4 md:mt-0">Crafted with Next.js & Three.js</p>
+        </div>
+      </footer>
+    </main>
   );
 }

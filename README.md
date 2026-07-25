@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MotionOO2
 
-## Getting Started
+A premium, highly interactive motion design web experience pushing the boundaries of what is possible on the web.
 
-First, run the development server:
+## 🚀 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+MotionOO2 is an architectural masterpiece of front-end development, crafted to deliver a cinematic and seamless user experience. Combining the power of **Next.js**, **Framer Motion**, and **WebGL (Three.js/React Three Fiber)**, this project serves as a masterclass in modern digital environments, scroll-telling, and physics-based interactions.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Created by **mrbezarate**.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Immersive 3D Environments:** A continuous, reactive WebGL particle galaxy background powered by React Three Fiber.
+- **Physics-Based Scroll:** Buttery-smooth, heavy-inertia scrolling engineered with Lenis, delivering a premium "drifting" feel.
+- **Dynamic Layout Architectures:**
+  - *Horizontal Scroll Integration:* Content that shifts horizontally as you scroll vertically.
+  - *Stacking Cards:* Massive glassmorphic panels that stick and stack natively with 3D entry animations.
+  - *Infinite Carousels:* Seamless, endless looping marquee components.
+  - *Video Mask Scaling:* Scroll-telling masks that expand to cover the viewport.
+- **Premium Micro-Interactions:** Magnetic custom cursors with `mix-blend-difference` effects, kinetic typography reveals, and glassmorphic UI elements.
+- **Modern Tech Stack:** Built with Next.js (App Router), Tailwind CSS v4, and Framer Motion.
 
-## Learn More
+## 🛠 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Animation:** Framer Motion
+- **WebGL:** Three.js, React Three Fiber (R3F), Drei
+- **Scroll Physics:** Lenis
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To run this project locally:
 
-## Deploy on Vercel
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mrbezarate/MotionOO2.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd MotionOO2
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 👨‍💻 Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Designed and Developed by **mrbezarate**.
+
+## 📄 License
+
+This project is open-source and available under the MIT License.
