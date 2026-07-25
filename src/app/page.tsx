@@ -19,10 +19,15 @@ export default function Home() {
 
   return (
     <main className="relative w-full overflow-x-hidden bg-transparent text-white">
-      {/* Fixed 3D Background */}
-      <div className="fixed inset-0 -z-10 w-full h-screen pointer-events-none">
+      {/* 3D Background - Zoom Out Reveal */}
+      <motion.div 
+        initial={{ scale: 1.5, filter: "blur(30px)", opacity: 0 }}
+        animate={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
+        transition={{ duration: 4, ease: [0.16, 1, 0.3, 1], delay: 1.5 }}
+        className="fixed inset-0 -z-10 w-full h-screen pointer-events-none"
+      >
         <Background3D />
-      </div>
+      </motion.div>
       
       {/* 1. Hero Section */}
       <section className="relative w-full h-screen flex flex-col items-center justify-center pt-20 px-4 md:px-10 z-10 pointer-events-none">
@@ -30,9 +35,9 @@ export default function Home() {
           <HeroText text="The Future of Web Experiences" />
           
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 0.8, y: 0 }}
-            transition={{ duration: 1, delay: 3.5 }}
+            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+            animate={{ opacity: 0.8, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 4 }}
             className="mt-12 text-neutral-400 text-xl md:text-3xl font-light tracking-wide max-w-4xl mx-auto"
           >
             Immersive 3D environments combined with buttery smooth animations. A new dimension of interaction.
@@ -42,12 +47,13 @@ export default function Home() {
             href="https://t.me/UndaOn"
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1, delay: 3.8, type: "spring" }}
-            className="mt-12 px-10 py-5 bg-white text-black text-xl font-bold rounded-full hover:scale-110 transition-transform duration-300 uppercase tracking-widest cursor-none inline-block shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+            transition={{ duration: 1.5, delay: 4.3, type: "spring", bounce: 0.4 }}
+            className="mt-12 px-10 py-5 bg-white text-black text-xl font-bold rounded-full hover:scale-110 transition-transform duration-300 uppercase tracking-widest cursor-none inline-block shadow-[0_0_40px_rgba(255,255,255,0.3)] relative overflow-hidden group"
           >
-            Let's Talk
+            <span className="relative z-10">Let's Talk</span>
+            <div className="absolute inset-0 bg-neutral-200 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-0"></div>
           </motion.a>
         </div>
       </section>
@@ -110,9 +116,10 @@ export default function Home() {
             href="https://t.me/UndaOn"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-12 px-12 py-6 bg-white text-black text-2xl font-bold rounded-full hover:scale-110 transition-transform duration-300 uppercase tracking-widest cursor-none inline-block shadow-[0_0_60px_rgba(255,255,255,0.2)]"
+            className="mt-12 px-12 py-6 bg-white text-black text-2xl font-bold rounded-full hover:scale-110 transition-transform duration-300 uppercase tracking-widest cursor-none inline-block shadow-[0_0_60px_rgba(255,255,255,0.2)] relative overflow-hidden group"
           >
-            Let's Talk
+            <span className="relative z-10">Let's Talk</span>
+            <div className="absolute inset-0 bg-neutral-200 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-0"></div>
           </a>
         </div>
       </section>
