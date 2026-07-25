@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
-import Navbar from "@/components/ui/Navbar";
+import Preloader from "@/components/ui/Preloader";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 
 const geistSans = Geist({
@@ -32,8 +32,8 @@ export default function RootLayout({
     >
       <body className="bg-black text-white selection:bg-neutral-800 selection:text-white cursor-none min-h-screen w-full">
         <CustomCursor />
+        <Preloader />
         <SmoothScroll>
-          <Navbar />
           {children}
         </SmoothScroll>
       </body>

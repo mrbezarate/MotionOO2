@@ -1,3 +1,5 @@
+'use client';
+
 import Background3D from "@/components/canvas/Background3D";
 import HeroText from "@/components/animations/HeroText";
 import HorizontalScroll from "@/components/animations/HorizontalScroll";
@@ -10,6 +12,7 @@ import ZigZag from "@/components/animations/ZigZag";
 import ExpandingCards from "@/components/animations/ExpandingCards";
 import StickySection from "@/components/animations/StickySection";
 import InfiniteCarousel from "@/components/animations/InfiniteCarousel";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const revealText = "Every pixel is carefully crafted to deliver a highly engaging and extremely premium experience. We use the latest in WebGL and Framer Motion to build an unforgettable digital journey. Scroll down to see the magic unfold.";
@@ -23,11 +26,29 @@ export default function Home() {
       
       {/* 1. Hero Section */}
       <section className="relative w-full h-screen flex flex-col items-center justify-center pt-20 px-4 md:px-10 z-10 pointer-events-none">
-        <div className="max-w-7xl w-full text-center pointer-events-auto">
+        <div className="max-w-7xl w-full text-center pointer-events-auto flex flex-col items-center">
           <HeroText text="The Future of Web Experiences" />
-          <p className="mt-12 text-neutral-400 text-xl md:text-3xl font-light tracking-wide max-w-4xl mx-auto opacity-80">
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 0.8, y: 0 }}
+            transition={{ duration: 1, delay: 3.5 }}
+            className="mt-12 text-neutral-400 text-xl md:text-3xl font-light tracking-wide max-w-4xl mx-auto"
+          >
             Immersive 3D environments combined with buttery smooth animations. A new dimension of interaction.
-          </p>
+          </motion.p>
+
+          <motion.a 
+            href="https://t.me/UndaOn"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1, delay: 3.8, type: "spring" }}
+            className="mt-12 px-10 py-5 bg-white text-black text-xl font-bold rounded-full hover:scale-110 transition-transform duration-300 uppercase tracking-widest cursor-none inline-block shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+          >
+            Let's Talk
+          </motion.a>
         </div>
       </section>
 
@@ -85,9 +106,14 @@ export default function Home() {
           <p className="text-2xl md:text-4xl text-neutral-400 font-light">
             Let's create something extraordinary together.
           </p>
-          <button className="mt-12 px-12 py-6 bg-white text-black text-2xl font-bold rounded-full hover:scale-105 transition-transform duration-300 uppercase tracking-widest cursor-none">
-            Start a project
-          </button>
+          <a 
+            href="https://t.me/UndaOn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-12 px-12 py-6 bg-white text-black text-2xl font-bold rounded-full hover:scale-110 transition-transform duration-300 uppercase tracking-widest cursor-none inline-block shadow-[0_0_60px_rgba(255,255,255,0.2)]"
+          >
+            Let's Talk
+          </a>
         </div>
       </section>
       
