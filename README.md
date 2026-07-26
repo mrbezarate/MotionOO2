@@ -18,7 +18,7 @@
 <br />
 <br />
 
-<video src="./content/preve.mp4" controls="controls" autoplay loop muted playsinline width="100%" style="border-radius: 12px;"></video>
+<video src="https://github.com/mrbezarate/MotionOO2/raw/main/content/preve.mp4" controls="controls" muted="muted" playsinline="playsinline" width="100%"></video>
 
 </div>
 
