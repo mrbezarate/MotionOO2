@@ -18,7 +18,7 @@
 <br />
 <br />
 
-<video src="https://raw.githubusercontent.com/mrbezarate/MotionOO2/main/content/preview.mp4" controls width="100%"></video>
+<video src="./content/preview.mp4" autoplay loop muted playsinline width="100%"></video>
 
 <br />
 
