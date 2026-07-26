@@ -18,7 +18,7 @@
 <br />
 <br />
 
-<video src="https://github.com/mrbezarate/MotionOO2/raw/main/content/preve.mp4" controls="controls" muted="muted" playsinline="playsinline" width="100%"></video>
+<img src="./content/preview.gif" alt="Preview" width="100%" />
 
 </div>
 
