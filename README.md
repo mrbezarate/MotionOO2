@@ -18,7 +18,9 @@
 <br />
 <br />
 
-<img src="./content/preview.gif" alt="Preview" width="100%" />
+![Motion OO2 Preview](https://raw.githubusercontent.com/mrbezarate/MotionOO2/main/content/preview.gif)
+
+<br />
 
 </div>
 
