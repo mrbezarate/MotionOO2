@@ -14,7 +14,7 @@ export default function ExpandingCards() {
 
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center bg-black py-20 px-4 md:px-20 z-10 pointer-events-auto">
-      <div className="w-full text-center mb-20">
+      <div className="w-full text-center mb-10">
         <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter">Expand Your Mind</h2>
       </div>
       <div className="w-full max-w-[120rem] h-[60vh] md:h-[70vh] flex gap-4 md:gap-8">

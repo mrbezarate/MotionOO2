@@ -12,6 +12,8 @@ import ZigZag from "@/components/animations/ZigZag";
 import ExpandingCards from "@/components/animations/ExpandingCards";
 import StickySection from "@/components/animations/StickySection";
 import InfiniteCarousel from "@/components/animations/InfiniteCarousel";
+import FloatingStats from "@/components/animations/FloatingStats";
+import GlowDivider from "@/components/animations/GlowDivider";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -58,15 +60,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. Text Reveal Section */}
-      <section className="relative w-full min-h-screen flex flex-col items-center justify-center py-32 px-4 z-10 pointer-events-none bg-gradient-to-b from-transparent to-black">
-        <div className="max-w-5xl w-full pointer-events-auto">
-          <TextReveal text={revealText} className="text-center md:text-left" />
-        </div>
+      {/* 2. Text Reveal Section — Sticky centered */}
+      <section className="relative z-10 pointer-events-auto bg-gradient-to-b from-transparent via-black/50 to-black">
+        <TextReveal text={revealText} className="text-center md:text-left" />
       </section>
       
       {/* 3. Sliding Panels (Unexpected Left/Right) */}
       <SlidingPanels />
+
+      <GlowDivider />
 
       {/* 4. Video Mask Scale Section */}
       <section className="relative z-10">
@@ -78,13 +80,18 @@ export default function Home() {
         <ZigZag />
       </section>
 
+      <GlowDivider />
+      <FloatingStats />
+
       {/* 6. Giant Marquee Section */}
-      <section className="relative w-full py-20 z-10 pointer-events-auto bg-black overflow-hidden flex flex-col justify-center">
+      <section className="relative w-full py-10 z-10 pointer-events-auto bg-black overflow-hidden flex flex-col justify-center">
         <Marquee text="Premium Design • WebGL Magic • " />
-        <div className="mt-20">
+        <div className="mt-8">
           <Marquee text="Next.js Performance • Smooth Scroll • " />
         </div>
       </section>
+
+      <GlowDivider />
 
       {/* 7. Parallax Gallery Section */}
       <section className="relative z-10 pointer-events-auto">
@@ -104,7 +111,7 @@ export default function Home() {
       <InfiniteCarousel />
 
       {/* 12. Contact / CTA Section */}
-      <section className="relative w-full min-h-screen flex flex-col items-center justify-center py-40 px-4 z-10 pointer-events-auto bg-black">
+      <section className="relative w-full flex flex-col items-center justify-center py-20 px-4 z-10 pointer-events-auto bg-black">
         <div className="max-w-5xl w-full text-center space-y-16">
           <h2 className="text-6xl md:text-[8vw] font-black tracking-tighter text-white uppercase leading-none">
             Ready to build?
@@ -125,11 +132,11 @@ export default function Home() {
       </section>
       
       {/* Footer Section */}
-      <footer className="relative w-full pt-40 pb-20 flex flex-col items-center justify-center z-10 pointer-events-auto bg-black border-t border-neutral-900">
+      <footer className="relative w-full pt-20 pb-10 flex flex-col items-center justify-center z-10 pointer-events-auto bg-black border-t border-neutral-900">
         <h1 className="text-[15vw] font-black tracking-tighter text-neutral-900 uppercase pointer-events-none select-none leading-[0.8]">
           Motion
         </h1>
-        <div className="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center mt-20 px-10 text-neutral-500 font-medium tracking-widest uppercase text-sm">
+        <div className="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center mt-10 px-10 text-neutral-500 font-medium tracking-widest uppercase text-sm">
           <p>© 2026 Antigravity. All rights reserved.</p>
           <p className="mt-4 md:mt-0">Crafted with Next.js & Three.js</p>
         </div>

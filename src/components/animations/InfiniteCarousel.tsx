@@ -7,7 +7,7 @@ export default function InfiniteCarousel() {
   ];
 
   return (
-    <div className="w-full py-32 md:py-40 bg-black overflow-hidden flex flex-col gap-10 z-10 pointer-events-auto">
+    <div className="w-full py-16 md:py-20 bg-black overflow-hidden flex flex-col gap-10 z-10 pointer-events-auto">
       <div className="w-full text-center mb-10">
         <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter">Endless Loop</h2>
       </div>

@@ -9,7 +9,7 @@ const features = [
 
 export default function ZigZag() {
   return (
-    <div className="w-full flex flex-col gap-40 py-20 px-6 md:px-20 bg-black z-10 pointer-events-auto">
+    <div className="w-full flex flex-col gap-20 py-10 px-6 md:px-20 bg-black z-10 pointer-events-auto">
       {features.map((f, i) => (
         <motion.div 
           key={i}
@@ -31,7 +31,7 @@ export default function ZigZag() {
                 transition={{ delay: 0.3, duration: 1 }}
                 className="relative z-10 text-white/10 font-black text-[20vw] leading-none select-none pointer-events-none"
              >
-               0{i+1}
+               {String(i + 1).padStart(2, '0')}
              </motion.div>
           </div>
         </motion.div>

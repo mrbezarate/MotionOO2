@@ -80,7 +80,7 @@ const Galaxy = () => {
 export default function Background3D() {
   return (
     <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1, background: '#030305' }}>
-      <Canvas camera={{ position: [0, 2, 6], fov: 60 }}>
+      <Canvas camera={{ position: [0, 2, 6], fov: 60 }} dpr={[1, 1.5]}>
         <fog attach="fog" args={['#030305', 2, 10]} />
         <Galaxy />
       </Canvas>

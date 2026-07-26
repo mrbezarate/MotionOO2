@@ -39,15 +39,15 @@ export default function StickySection() {
       {cards.map((card, i) => (
         <div 
           key={card.id} 
-          className="h-screen w-full flex items-center justify-center sticky top-0"
+          style={{ top: `${i * 20}px` }}
+          className="h-screen w-full flex items-center justify-center sticky"
         >
           <motion.div 
             initial={{ opacity: 0, y: 150, scale: 0.95, rotateX: 10 }}
             whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: false, margin: "-10%" }}
-            style={{ top: `${i * 20}px` }}
-            className={`w-[95vw] md:w-[80vw] h-[85vh] rounded-[3rem] bg-gradient-to-br ${card.gradient} border border-white/10 flex flex-col md:flex-row items-center justify-between overflow-hidden shadow-[0_-10px_50px_rgba(0,0,0,0.5)] relative p-10 md:p-20`}
+            className={`w-[95vw] md:w-[80vw] h-[85vh] rounded-[3rem] bg-gradient-to-br ${card.gradient} border border-white/10 flex flex-col md:flex-row items-center justify-between overflow-hidden shadow-[0_-10px_50px_rgba(0,0,0,0.5)] relative p-10 md:p-20 will-change-transform`}
           >
              {/* Noise Texture Overlay */}
              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay pointer-events-none"></div>
