@@ -18,6 +18,8 @@
 <br />
 <br />
 
+<video src="./content/preve.mp4" controls="controls" autoplay loop muted playsinline width="100%" style="border-radius: 12px;"></video>
+
 </div>
 
 ## ✦ The Vision
