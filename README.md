@@ -18,7 +18,7 @@
 <br />
 <br />
 
-![Motion OO2 Preview](https://raw.githubusercontent.com/mrbezarate/MotionOO2/main/content/preview.gif)
+<video src="https://raw.githubusercontent.com/mrbezarate/MotionOO2/main/content/preview.mp4" controls width="100%"></video>
 
 <br />
 
