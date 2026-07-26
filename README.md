@@ -18,8 +18,9 @@
 <br />
 <br />
 
-<video src="./content/preview.mp4" autoplay loop muted playsinline width="100%"></video>
-
+<p align="center">
+  <img src="./content/preview.gif" width="100%">
+</p>
 <br />
 
 </div>
