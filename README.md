@@ -19,7 +19,7 @@
 <br />
 
 <p align="center">
-  <img src="./content/preview.mp4" width="100%">
+  <img src="./content/preview.gif" width="100%">
 </p>
 <br />
 
