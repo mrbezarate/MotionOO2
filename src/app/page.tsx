@@ -20,7 +20,7 @@ export default function Home() {
   const revealText = "Every pixel is carefully crafted to deliver a highly engaging and extremely premium experience. We use the latest in WebGL and Framer Motion to build an unforgettable digital journey. Scroll down to see the magic unfold.";
 
   return (
-    <main className="relative w-full overflow-x-hidden bg-transparent text-white">
+    <main className="relative w-full bg-transparent text-white">
       {/* 3D Background - Zoom Out Reveal */}
       <motion.div 
         initial={{ scale: 1.5, filter: "blur(30px)", opacity: 0 }}
@@ -84,11 +84,9 @@ export default function Home() {
       <FloatingStats />
 
       {/* 6. Giant Marquee Section */}
-      <section className="relative w-full py-10 z-10 pointer-events-auto bg-black overflow-hidden flex flex-col justify-center">
-        <Marquee text="Premium Design • WebGL Magic • " />
-        <div className="mt-8">
-          <Marquee text="Next.js Performance • Smooth Scroll • " />
-        </div>
+      <section className="relative w-full py-20 z-10 pointer-events-auto bg-black overflow-hidden flex flex-col justify-center">
+        <Marquee text="Premium Design • WebGL Magic • " theme="light" direction="left" rotate="-rotate-2" />
+        <Marquee text="Next.js Performance • Smooth Scroll • " theme="dark" direction="right" rotate="rotate-2" className="mt-8 md:mt-12" />
       </section>
 
       <GlowDivider />
