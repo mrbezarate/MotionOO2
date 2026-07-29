@@ -32,7 +32,7 @@ const panels = [
     id: 4,
     title: 'Build',
     video: '/videos/Build.mp4',
-    poster: '',
+    poster: '/build-poster.gif',
     color: 'from-cyan-900/70 to-teal-900/50',
     copy: 'Layer depth, energy, and structure into one scene.',
   },
@@ -40,6 +40,7 @@ const panels = [
 
 export default function ExpandingCards() {
   const [active, setActive] = useState<number>(0);
+  const [loaded, setLoaded] = useState<boolean[]>(() => panels.map((_, index) => index === 0));
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   useEffect(() => {
@@ -90,11 +91,21 @@ export default function ExpandingCards() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className={`group relative w-full h-full min-h-[16rem] rounded-[2rem] md:rounded-[3rem] overflow-hidden cursor-none bg-gradient-to-br ${panel.color} border border-white/10 flex items-end p-6 md:p-10`}
           >
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-cover bg-center pointer-events-none"
+              style={panel.poster ? { backgroundImage: `url(${panel.poster})` } : undefined}
+            />
             <video
               ref={(element) => {
                 videoRefs.current[index] = element;
               }}
-              className="absolute inset-0 h-full w-full object-cover pointer-events-none scale-100 transition-transform duration-700 group-hover:scale-[1.04]"
+              onLoadedData={() => {
+                setLoaded((current) => current.map((item, itemIndex) => (itemIndex === index ? true : item)));
+              }}
+              className={`absolute inset-0 h-full w-full object-cover pointer-events-none scale-100 transition-all duration-700 group-hover:scale-[1.04] ${
+                loaded[index] ? 'opacity-100' : 'opacity-0'
+              }`}
               src={panel.video}
               poster={panel.poster || undefined}
               muted
