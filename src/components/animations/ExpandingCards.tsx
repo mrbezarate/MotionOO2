@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const panels = [
@@ -91,11 +92,23 @@ export default function ExpandingCards() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className={`group relative w-full h-full min-h-[16rem] rounded-[2rem] md:rounded-[3rem] overflow-hidden cursor-none bg-gradient-to-br ${panel.color} border border-white/10 flex items-end p-6 md:p-10`}
           >
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 bg-cover bg-center pointer-events-none"
-              style={panel.poster ? { backgroundImage: `url(${panel.poster})` } : undefined}
-            />
+            {panel.poster.startsWith('/') ? (
+              <Image
+                src={panel.poster}
+                alt=""
+                aria-hidden="true"
+                fill
+                unoptimized
+                priority={panel.id === 4}
+                className="absolute inset-0 object-cover pointer-events-none"
+              />
+            ) : (
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-cover bg-center pointer-events-none"
+                style={{ backgroundImage: `url(${panel.poster})` }}
+              />
+            )}
             <video
               ref={(element) => {
                 videoRefs.current[index] = element;
