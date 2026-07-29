@@ -7,7 +7,7 @@
 
 **A Masterclass in WebGL & Physics-Based Motion Design**
 
-[![Live Experience](https://img.shields.io/badge/Live_Experience-000000?style=for-the-badge&logo=vercel&logoColor=white)]([https://motion-oo-2-a715d1ea9-mrbezarates-projects.vercel.app/))
+[![Live Experience](https://img.shields.io/badge/Live_Experience-000000?style=for-the-badge&logo=vercel&logoColor=white)]([https://motion-oo-2-a715d1ea9-mrbezarates-projects.vercel.app/)
 <br />
 
 [![Built with Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)]()
