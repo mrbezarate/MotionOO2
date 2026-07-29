@@ -7,21 +7,24 @@ const panels = [
   {
     id: 1,
     title: 'Explore',
-    video: '/videos/Explore.mp4',
+    video: 'https://v1.pinimg.com/videos/iht/720p/e4/db/f9/e4dbf9ce785f57566e7aab511fc783fa.mp4',
+    poster: 'https://i.pinimg.com/videos/thumbnails/originals/e4/db/f9/e4dbf9ce785f57566e7aab511fc783fa.0000000.jpg',
     color: 'from-purple-900/70 to-indigo-900/50',
     copy: 'Discover new forms, textures, and visual rhythm.',
   },
   {
     id: 2,
     title: 'Create',
-    video: '/videos/Create.mp4',
+    video: 'https://v1.pinimg.com/videos/iht/720p/cd/32/ff/cd32ffd8bf71b0ba2efd7825b153e3b2.mp4',
+    poster: 'https://i.pinimg.com/videos/thumbnails/originals/cd/32/ff/cd32ffd8bf71b0ba2efd7825b153e3b2.0000000.jpg',
     color: 'from-indigo-900/70 to-blue-900/50',
     copy: 'Turn motion into a deliberate and focused experience.',
   },
   {
     id: 3,
     title: 'Inspire',
-    video: '/videos/Inspire.mp4',
+    video: 'https://v1.pinimg.com/videos/iht/expMp4/33/01/79/330179c2d27efc1715d01af8e3590583_720w.mp4',
+    poster: 'https://i.pinimg.com/videos/thumbnails/originals/33/01/79/330179c2d27efc1715d01af8e3590583.0000000.jpg',
     color: 'from-blue-900/70 to-cyan-900/50',
     copy: 'Let the visuals breathe and guide attention naturally.',
   },
@@ -29,6 +32,7 @@ const panels = [
     id: 4,
     title: 'Build',
     video: '/videos/Build.mp4',
+    poster: '',
     color: 'from-cyan-900/70 to-teal-900/50',
     copy: 'Layer depth, energy, and structure into one scene.',
   },
@@ -43,6 +47,10 @@ export default function ExpandingCards() {
       if (!video) return;
 
       if (index === active) {
+        if (video.readyState === 0) {
+          video.load();
+        }
+
         const playPromise = video.play();
 
         if (playPromise) {
@@ -52,6 +60,7 @@ export default function ExpandingCards() {
         }
       } else {
         video.pause();
+        video.currentTime = 0;
       }
     });
   }, [active]);
@@ -87,10 +96,11 @@ export default function ExpandingCards() {
               }}
               className="absolute inset-0 h-full w-full object-cover pointer-events-none scale-100 transition-transform duration-700 group-hover:scale-[1.04]"
               src={panel.video}
+              poster={panel.poster || undefined}
               muted
               loop
               playsInline
-              preload={active === index ? 'auto' : 'metadata'}
+              preload={active === index ? 'auto' : 'none'}
               autoPlay={active === index}
             />
 
