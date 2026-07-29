@@ -54,7 +54,7 @@ export default function Home() {
             transition={{ duration: 1.5, delay: 4.3, type: "spring", bounce: 0.4 }}
             className="mt-12 px-10 py-5 bg-white text-black text-xl font-bold rounded-full hover:scale-110 transition-transform duration-300 uppercase tracking-widest cursor-none inline-block shadow-[0_0_40px_rgba(255,255,255,0.3)] relative overflow-hidden group"
           >
-            <span className="relative z-10">Let's Talk</span>
+            <span className="relative z-10">Let&apos;s Talk</span>
             <div className="absolute inset-0 bg-neutral-200 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-0"></div>
           </motion.a>
         </div>
@@ -115,7 +115,7 @@ export default function Home() {
             Ready to build?
           </h2>
           <p className="text-2xl md:text-4xl text-neutral-400 font-light">
-            Let's create something extraordinary together.
+            Let&apos;s create something extraordinary together.
           </p>
           <a 
             href="https://t.me/UndaOn"
@@ -123,7 +123,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="mt-12 px-12 py-6 bg-white text-black text-2xl font-bold rounded-full hover:scale-110 transition-transform duration-300 uppercase tracking-widest cursor-none inline-block shadow-[0_0_60px_rgba(255,255,255,0.2)] relative overflow-hidden group"
           >
-            <span className="relative z-10">Let's Talk</span>
+            <span className="relative z-10">Let&apos;s Talk</span>
             <div className="absolute inset-0 bg-neutral-200 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-0"></div>
           </a>
         </div>
